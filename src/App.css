@@ -1,0 +1,42 @@
+#root {
+  max-width: 100%; /* Adjusts to the full width of the viewport */
+  margin: 0 auto; /* Centers content if it's smaller than the viewport */
+  padding: 0 1em; /* Optional: Adds some padding for small screens */
+}
+
+.logo {
+  height: 6%; /* Responsive height based on viewport */
+  max-height: 6em; /* Ensures it doesn't grow too large on larger screens */
+  padding: 1.5%; /* Responsive padding */
+  will-change: filter;
+  transition: filter 300ms;
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+/* Media queries for smaller screens */
+@media (max-width: 768px) {
+  #root {
+    padding: 0 0.5em; /* Adjusts padding for smaller screens */
+  }
+
+  .logo {
+    height: 8%; /* Slightly larger logo for better visibility */
+    max-height: 5em; /* Restrict the maximum size */
+    padding: 1em; /* Adjust padding */
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    height: 10%; /* Further adjust logo size for very small screens */
+    max-height: 4em; /* Ensure it doesn't dominate the screen */
+    padding: 0.5em;
+  }
+}
