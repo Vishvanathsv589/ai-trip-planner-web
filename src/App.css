@@ -1,7 +1,8 @@
 #root {
-  max-width: 100%; /* Adjusts to the full width of the viewport */
+  max-width: cover; /* Adjusts to the full width of the viewport */
   margin: 0 auto; /* Centers content if it's smaller than the viewport */
   padding: 0 1em; /* Optional: Adds some padding for small screens */
+  
 }
 
 .logo {
