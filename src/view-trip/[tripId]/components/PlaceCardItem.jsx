@@ -12,17 +12,17 @@ function PlaceCardItem({ place }) {
   }, [place]);
 
   const GetPlacePhoto = async () => {
-    const data = { textQuery: place.placeName };
-    const response = await GetPlaceDetails(data).catch(
-      (error) => console.error("Error fetching place photo:", error)
-    );
-
-    if (response && response.data.places[3]?.photos?.length > 3) {
-      const PhotoUrl = PHOTO_REF_URL.replace(
-        '{NAME}',
-        response.data.places[3].photos[2].name
-      );
-      setPhotoUrl(PhotoUrl);
+    try {
+      const data = { textQuery: place.placeName };
+      const result = await GetPlaceDetails(data);
+      
+      const photos = result.data.places[3]?.photos;
+      if (photos && photos.length > 3) {
+        const PhotoUrl = PHOTO_REF_URL.replace('{NAME}', photos[2].name);
+        setPhotoUrl(PhotoUrl);
+      }
+    } catch (error) {
+      console.error("Error fetching place photo:", error);
     }
   };
 
