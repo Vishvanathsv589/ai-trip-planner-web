@@ -32,7 +32,7 @@ function HotelCardItem({ hotel }) {
             }
         >
             <img
-                src={photoUrl || "/placeholder.jpg"}
+                src={photoUrl || "/placeholder.png"}
                 alt={hotel.hotelName || "Hotel"}
                 className="rounded-lg w-full h-48 object-cover"
             />
