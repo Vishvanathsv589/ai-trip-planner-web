@@ -13,16 +13,27 @@ function PlaceCardItem({ place }) {
 
   const GetPlacePhoto = async () => {
     try {
-      const data = { textQuery: place.placeName };
+      const data = { textQuery: place?.placeName };
+      console.log("Fetching photo for:", data);
+
       const result = await GetPlaceDetails(data);
-      
-      const photos = result.data.places[3]?.photos;
-      if (photos && photos.length > 3) {
-        const PhotoUrl = PHOTO_REF_URL.replace('{NAME}', photos[2].name);
-        setPhotoUrl(PhotoUrl);
+      console.log("API Response:", result.data);
+
+      if (result.data?.places?.length > 0) {
+        const placeData = result.data.places[0]; // Get the first result
+        const photos = placeData.photos;
+
+        if (photos && photos.length > 0) {
+          const PhotoUrl = PHOTO_REF_URL.replace('{NAME}', photos[0].name);
+          setPhotoUrl(PhotoUrl);
+        } else {
+          console.warn("No photos available for", place?.placeName);
+        }
+      } else {
+        console.warn("No places found for", place?.placeName);
       }
     } catch (error) {
-      console.error("Error fetching place photo:", error);
+      console.error("Error fetching place photo:", error.response?.data || error.message);
     }
   };
 
@@ -42,7 +53,7 @@ function PlaceCardItem({ place }) {
     >
       <div className='border rounded-xl p-3 mt-2 flex gap-5 hover:scale-105 transition-all hover:shadow-md cursor-pointer'>
         <img
-          src={photoUrl || "/placeholder.png"}
+          src={photoUrl || "/placeholder.jpg"}
           className='w-[130px] h-[130px] rounded-xl object-cover'
           alt={place.placeName || "Place"}
           onError={(e) => e.target.src = "/placeholder.jpg"}
