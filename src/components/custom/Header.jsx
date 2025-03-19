@@ -45,7 +45,7 @@ function Header() {
 
   return (
     <div className='p-3 shadow-sm flex justify-between items-center px-5 bg-white bg-opacity-20 backdrop-blur-md rounded-lg'>
-      <img src="Logo2.png" alt="logo" style={{ width: '250px', height: 'auto' }} />
+      <img src="logo2.png" alt="logo" style={{ width: '250px', height: 'auto' }} />
   
       <div>
         {user ? (
@@ -84,7 +84,7 @@ function Header() {
         <DialogContent>
           <DialogHeader>
             <DialogDescription>
-              <img src="Logo2.png" alt="logo" style={{ width: '250px', height: 'auto' }} />
+              <img src="logo2.png" alt="logo" style={{ width: '250px', height: 'auto' }} />
               <h2 className="font-bold text-lg mt-7">Sign in with Google</h2>
               <p>Sign in with Google Authentication securely</p>
   
