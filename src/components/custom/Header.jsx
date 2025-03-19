@@ -51,10 +51,10 @@ function Header() {
         {user ? (
           <div className='flex items-center gap-3'>
             <a href="/create-trip" className="no-underline text-black">
-              <Button variant='outline' className='rounded-full'>+ Create Trip</Button>
+              <Button className='rounded-full px-5 py-2 bg-[#649dad] text-white hover:bg-gray-800'>+ Create Trip</Button>
             </a>
             <a href="/my-trips" className="no-underline text-black">
-              <Button variant='outline' className='rounded-full'>My Trips</Button>
+              <Button className='rounded-full px-5 py-2 bg-[#649dad] text-white hover:bg-gray-800'>My Trips</Button>
             </a>
   
             <Popover>
@@ -75,7 +75,9 @@ function Header() {
             </Popover>
           </div>
         ) : (
-          <Button onClick={() => setOpenDialog(true)}>Sign in</Button>
+          <Button onClick={() => setOpenDialog(true)} className="rounded-full px-5 py-2 bg-black text-white hover:bg-gray-800">
+            Sign in
+          </Button>
         )}
       </div>
   
@@ -88,7 +90,7 @@ function Header() {
               <h2 className="font-bold text-lg mt-7">Sign in with Google</h2>
               <p>Sign in with Google Authentication securely</p>
   
-              <Button onClick={login} className="w-full mt-5 flex gap-4 items-center">
+              <Button onClick={login} className="w-full mt-5 flex gap-4 items-center bg-black text-white hover:bg-gray-800">
                 <FcGoogle className='h-7 w-7' />Sign in with Google
               </Button>
             </DialogDescription>
