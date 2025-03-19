@@ -44,25 +44,24 @@ function Header() {
   });
 
   return (
-    <div className='p-3 shadow-sm flex justify-between items-center px-5'>
-      <img src="Logo.png" alt="logo" style={{ width: '250px', height: 'auto' }} />
-
+    <div className='p-3 shadow-sm flex justify-between items-center px-5 bg-white bg-opacity-20 backdrop-blur-md rounded-lg'>
+      <img src="Logo2.png" alt="logo" style={{ width: '250px', height: 'auto' }} />
+  
       <div>
         {user ? (
           <div className='flex items-center gap-3'>
-            <a href="/create-trip" className="no-underline text-black" >
+            <a href="/create-trip" className="no-underline text-black">
               <Button variant='outline' className='rounded-full'>+ Create Trip</Button>
             </a>
-            <a href="/my-trips" className="no-underline text-black" >
+            <a href="/my-trips" className="no-underline text-black">
               <Button variant='outline' className='rounded-full'>My Trips</Button>
             </a>
-
-            {/* ✅ Fix: Used "asChild" to prevent extra styling on the image */}
+  
             <Popover>
               <PopoverTrigger asChild>
-                <img 
-                  src={user?.picture} 
-                  className='h-[35px] w-[35px] rounded-full cursor-pointer' 
+                <img
+                  src={user?.picture}
+                  className='h-[35px] w-[35px] rounded-full cursor-pointer'
                   alt="User Profile"
                 />
               </PopoverTrigger>
@@ -79,16 +78,16 @@ function Header() {
           <Button onClick={() => setOpenDialog(true)}>Sign in</Button>
         )}
       </div>
-
+  
       {/* Google Login Dialog */}
       <Dialog open={openDialog} onOpenChange={setOpenDialog}>
         <DialogContent>
           <DialogHeader>
             <DialogDescription>
-              <img src="Logo.png" alt="logo" style={{ width: '250px', height: 'auto' }} />
+              <img src="Logo2.png" alt="logo" style={{ width: '250px', height: 'auto' }} />
               <h2 className="font-bold text-lg mt-7">Sign in with Google</h2>
               <p>Sign in with Google Authentication securely</p>
-
+  
               <Button onClick={login} className="w-full mt-5 flex gap-4 items-center">
                 <FcGoogle className='h-7 w-7' />Sign in with Google
               </Button>
@@ -97,7 +96,7 @@ function Header() {
         </DialogContent>
       </Dialog>
     </div>
-  );
-}
+  );  
+}  
 
 export default Header;
