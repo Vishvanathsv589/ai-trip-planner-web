@@ -44,7 +44,7 @@ function Header() {
   });
 
   return (
-    <div className='p-3 shadow-sm flex justify-between items-center px-5 bg-white bg-opacity-20 backdrop-blur-md rounded-lg'>
+    <div className='p-3 shadow-sm flex justify-between items-center px-5 bg-black bg-opacity-20 backdrop-blur-md rounded-lg'>
       <img src="logo2.png" alt="logo" style={{ width: '250px', height: 'auto' }} />
   
       <div>
