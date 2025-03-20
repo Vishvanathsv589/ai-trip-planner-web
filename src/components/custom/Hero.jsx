@@ -8,7 +8,7 @@ function Hero() {
       {/* Transparent Container for Heading, Paragraph, and Button */}
       <div className="bg-white bg-opacity-20 backdrop-blur-md px-10 py-6 rounded-lg shadow-lg mt-16 text-center animate-slideUp">
         <h1 className='font-extrabold text-[50px] animate-fadeIn delay-100'>
-          <span className="text-[#38B2AC]">Discover Your Next Adventure with AI: </span> 
+          <span className="text-[#50fbf2]">Discover Your Next Adventure with AI: </span> 
           Personalized Itineraries at Your Fingertips
         </h1>
 
@@ -23,6 +23,12 @@ function Hero() {
         </Link>
       </div>
 
+      {/* Centered Image Below Button with Transition Effect */}
+      <img 
+        src="/landing.png" 
+        alt="Explore beautiful destinations" 
+        className="w-full max-w-2xl mt-8 rounded-lg mx-auto animate-slideUp delay-200hover:scale-105"
+      />
     </div>
   )
 }
